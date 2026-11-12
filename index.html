@@ -4,109 +4,201 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ze-Chr0ME · Projects</title>
-<meta name="description" content="Projects by Ze-Chr0ME: Party Games, CS2 DemoLab and more.">
+<meta name="description" content="Dive through projects by Ze-Chr0ME: Party Games, CS2 DemoLab and more.">
 <meta property="og:title" content="Ze-Chr0ME · Projects">
-<meta property="og:description" content="Party Games, CS2 DemoLab and more.">
+<meta property="og:description" content="Party Games, CS2 DemoLab and more. Scroll to descend.">
 <meta property="og:image" content="https://ze-chr0me.github.io/showcase/assets/demolab-overview.jpg">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23111'/><text x='16' y='22' font-size='16' font-family='Arial' font-weight='bold' fill='%23f5d90a' text-anchor='middle'>Z</text></svg>">
+<meta name="theme-color" content="#1f9fc0">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 32'><path d='M4 16C14 4 36 2 50 16 36 30 14 28 4 16Z' fill='%23ffb36b'/><path d='M48 16 62 5 58 16 62 27Z' fill='%23ff8a4c'/><circle cx='15' cy='14' r='3' fill='%23062a3d'/></svg>">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero">
+<!-- Decoration: surface, light rays, fish, bubbles. All original shapes. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="fish" viewBox="0 0 64 32">
+    <path d="M4 16C14 4 36 2 50 16 36 30 14 28 4 16Z"/>
+    <path d="M48 16 62 5 58 16 62 27Z" opacity=".8"/>
+    <circle cx="15" cy="14" r="2.6" fill="#03202f"/>
+  </symbol>
+</svg>
+
+<div class="surface" aria-hidden="true">
+  <svg class="wave" viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 20C100 0 200 40 300 20S500 0 600 20 800 40 900 20 1100 0 1200 20V0H0Z"/></svg>
+  <div class="rays"></div>
+</div>
+
+<div class="school" aria-hidden="true">
+  <svg class="fish" style="--y:9%;--t:26s;--d:-4s;--s:34px;color:#ffb36b"><use href="#fish"/></svg>
+  <svg class="fish" style="--y:11%;--t:29s;--d:-9s;--s:22px;color:#ffd36b"><use href="#fish"/></svg>
+  <svg class="fish l" style="--y:21%;--t:34s;--d:-12s;--s:28px;color:#7ee0c3"><use href="#fish"/></svg>
+  <svg class="fish" style="--y:33%;--t:40s;--d:-20s;--s:40px;color:#ff8f6b"><use href="#fish"/></svg>
+  <svg class="fish l" style="--y:47%;--t:38s;--d:-6s;--s:26px;color:#59b8e6"><use href="#fish"/></svg>
+  <svg class="fish glow" style="--y:66%;--t:46s;--d:-18s;--s:30px;color:#5ef2ff"><use href="#fish"/></svg>
+  <svg class="fish glow l" style="--y:84%;--t:52s;--d:-30s;--s:24px;color:#b28bff"><use href="#fish"/></svg>
+  <svg class="leviathan" viewBox="0 0 640 140" style="--y:62%">
+    <path class="body" d="M70 70C150 30 210 110 300 70S450 30 530 70 600 100 636 74"/>
+    <path class="fin" d="M150 52 180 18 196 58M330 60 360 26 376 66"/>
+    <ellipse class="head" cx="56" cy="70" rx="52" ry="26"/>
+    <circle class="eye" cx="30" cy="62" r="5"/>
+  </svg>
+</div>
+
+<div class="bubbles" aria-hidden="true"></div>
+
+<aside class="depth" aria-hidden="true">
+  <small>Depth</small>
+  <b>0 m</b>
+  <span>Surface</span>
+</aside>
+
+<header class="hero" data-depth="0" data-zone="Surface">
   <a class="avatar" href="https://github.com/Ze-Chr0ME" aria-label="GitHub profile">
-    <img src="https://github.com/Ze-Chr0ME.png?size=160" alt="" width="72" height="72">
+    <img src="https://github.com/Ze-Chr0ME.png?size=160" alt="" width="76" height="76">
   </a>
   <div>
+    <p class="kicker">PDA · Personal project log</p>
     <h1>Ze-Chr0ME</h1>
-    <p>Games, tools and apps I build for myself and my friends.</p>
+    <p>Games, tools and apps I build for myself and my friends. Scroll to descend.</p>
   </div>
   <a class="btn ghost" href="https://github.com/Ze-Chr0ME">GitHub profile</a>
 </header>
 
 <main>
-  <h2 class="label">Featured</h2>
-
   <!-- Party Games -->
-  <article class="feature party">
-    <div class="feature-art party-art" aria-hidden="true">
-      <div class="tile t1"><span>Cards Against Humanity</span></div>
-      <div class="tile t2"><span>Monkey Paw</span></div>
-      <div class="tile t3"><span>Speed Date</span></div>
-      <div class="tile t4"><span>GIF Me</span></div>
-    </div>
-    <div class="feature-body">
-      <h3>Party Games</h3>
-      <p>Four party games in one shared room: <b>Cards Against Humanity</b>, <b>Monkey Paw</b>,
-         <b>Speed Date</b> and <b>GIF Me</b>. Create a lobby, share the code and play from any
-         browser, on phone or PC. Profiles and XP follow you across devices.</p>
-      <ul class="tags"><li>Browser</li><li>Multiplayer</li><li>JavaScript</li><li>Firebase</li></ul>
-      <div class="actions">
-        <a class="btn primary" href="https://ze-chr0me.github.io/party-games/">Play now</a>
-        <a class="btn ghost" href="https://github.com/Ze-Chr0ME/party-games">Source</a>
+  <section data-depth="40" data-zone="Safe Shallows">
+    <h2 class="zone"><span>▼ 40 m</span> Safe Shallows</h2>
+    <article class="feature party">
+      <div class="feature-art party-art" aria-hidden="true">
+        <div class="tile t1"><span>Cards Against Humanity</span></div>
+        <div class="tile t2"><span>Monkey Paw</span></div>
+        <div class="tile t3"><span>Speed Date</span></div>
+        <div class="tile t4"><span>GIF Me</span></div>
       </div>
-    </div>
-  </article>
+      <div class="feature-body">
+        <p class="entry">Databank entry · Featured</p>
+        <h3>Party Games</h3>
+        <p>Four party games in one shared room: <b>Cards Against Humanity</b>, <b>Monkey Paw</b>,
+           <b>Speed Date</b> and <b>GIF Me</b>. Create a lobby, share the code and play from any
+           browser, on phone or PC. Profiles and XP follow you across devices.</p>
+        <ul class="tags"><li>Browser</li><li>Multiplayer</li><li>JavaScript</li><li>Firebase</li></ul>
+        <div class="actions">
+          <a class="btn primary" href="https://ze-chr0me.github.io/party-games/">Play now</a>
+          <a class="btn ghost" href="https://github.com/Ze-Chr0ME/party-games">Source</a>
+        </div>
+      </div>
+    </article>
+  </section>
 
   <!-- Demo Lab -->
-  <article class="feature demolab">
-    <div class="feature-art shots">
-      <img class="main" src="assets/demolab-overview.jpg" alt="DemoLab stats dashboard" loading="lazy">
-      <img src="assets/demolab-replay.jpg" alt="DemoLab 2D replay" loading="lazy">
-      <img src="assets/demolab-clips.jpg" alt="DemoLab highlight clips" loading="lazy">
-    </div>
-    <div class="feature-body">
-      <h3><img class="icon" src="assets/demolab-icon.png" alt="" width="28" height="28"> CS2 DemoLab</h3>
-      <p>Stats, 2D replays, training, lineups and highlight clips from your CS2 demos. It reads each
-         demo once, builds a dashboard, heatmaps and per-match breakdowns, spots your best moments and
-         records them as clips while you keep using your PC. Analysis runs locally, no subscription.</p>
-      <ul class="tags"><li>Windows</li><li>Counter-Strike 2</li><li>Electron</li><li>★ 5</li></ul>
-      <div class="actions">
-        <a class="btn primary" href="https://github.com/Ze-Chr0ME/demo_lab/releases/latest">Download</a>
-        <a class="btn ghost" href="https://github.com/Ze-Chr0ME/demo_lab">Source</a>
+  <section data-depth="300" data-zone="Grand Reef">
+    <h2 class="zone"><span>▼ 300 m</span> Grand Reef</h2>
+    <article class="feature demolab">
+      <div class="feature-art shots">
+        <img class="main" src="assets/demolab-overview.jpg" alt="DemoLab stats dashboard" loading="lazy">
+        <img src="assets/demolab-replay.jpg" alt="DemoLab 2D replay" loading="lazy">
+        <img src="assets/demolab-clips.jpg" alt="DemoLab highlight clips" loading="lazy">
       </div>
-    </div>
-  </article>
+      <div class="feature-body">
+        <p class="entry">Databank entry · Leviathan class</p>
+        <h3><img class="icon" src="assets/demolab-icon.png" alt="" width="28" height="28"> CS2 DemoLab</h3>
+        <p>Stats, 2D replays, training, lineups and highlight clips from your CS2 demos. It reads each
+           demo once, builds a dashboard, heatmaps and per-match breakdowns, spots your best moments and
+           records them as clips while you keep using your PC. Analysis runs locally, no subscription.</p>
+        <ul class="tags"><li>Windows</li><li>Counter-Strike 2</li><li>Electron</li><li>★ 5</li></ul>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/Ze-Chr0ME/demo_lab/releases/latest">Download</a>
+          <a class="btn ghost" href="https://github.com/Ze-Chr0ME/demo_lab">Source</a>
+        </div>
+      </div>
+    </article>
+  </section>
 
-  <details class="more">
-    <summary><span>More projects</span><span class="count">6</span></summary>
-    <div class="grid">
-      <a class="card" href="https://github.com/Ze-Chr0ME/Filink">
-        <h4>Filink</h4>
-        <p>Fast file, folder and text transfer between an Android phone and a Windows PC on the same Wi-Fi.</p>
-        <span class="lang"><i style="--c:#dea584"></i>Rust · Kotlin</span>
-      </a>
-      <a class="card" href="https://github.com/Ze-Chr0ME/EZDownload">
-        <h4>EZDownload</h4>
-        <p>Save a link, keep the video. Local video downloader for Windows and Android, with a browser extension.</p>
-        <span class="lang"><i style="--c:#b07219"></i>Java</span>
-      </a>
-      <a class="card" href="https://github.com/Ze-Chr0ME/DroidCam">
-        <h4>CameraBridge</h4>
-        <p>Use your Android phone as a Windows webcam over Wi-Fi. Pair with a QR code, pick it in Discord or Zoom.</p>
-        <span class="lang"><i style="--c:#dea584"></i>Rust · Android</span>
-      </a>
-      <a class="card" href="https://github.com/Ze-Chr0ME/cool-n-rbg">
-        <h4>Cool'n RGB</h4>
-        <p>Lightweight SignalRGB / iCUE replacement: RGB lighting and fan/pump control in ~6 MB of RAM.</p>
-        <span class="lang"><i style="--c:#dea584"></i>Rust</span>
-      </a>
-      <a class="card" href="https://github.com/Ze-Chr0ME/everything_backport">
-        <h4>Everything Backport</h4>
-        <p>Every Minecraft update after 1.21.7, playable on 1.21.7. Fabric mod for client and server.</p>
-        <span class="lang"><i style="--c:#b07219"></i>Java · Fabric</span>
-      </a>
-      <a class="card" href="https://ze-chr0me.github.io/phasmophobia-cheat-sheet/">
-        <h4>Phasmophobia Cheat Sheet</h4>
-        <p>Question-based ghost identification with weighted scoring, built for low and no-evidence runs.</p>
-        <span class="lang"><i style="--c:#f1e05a"></i>JavaScript · Web</span>
-      </a>
-    </div>
-    <a class="all" href="https://github.com/Ze-Chr0ME?tab=repositories">All repositories on GitHub →</a>
-  </details>
+  <!-- Other projects -->
+  <section data-depth="900" data-zone="Lost River">
+    <h2 class="zone"><span>▼ 900 m</span> Lost River</h2>
+    <details class="more">
+      <summary><span>Unscanned wrecks</span><span class="count">6 projects</span><span class="hint">Click to scan</span></summary>
+      <div class="grid">
+        <a class="card" href="https://github.com/Ze-Chr0ME/Filink">
+          <h4>Filink</h4>
+          <p>Fast file, folder and text transfer between an Android phone and a Windows PC on the same Wi-Fi.</p>
+          <span class="lang"><i style="--c:#dea584"></i>Rust · Kotlin</span>
+        </a>
+        <a class="card" href="https://github.com/Ze-Chr0ME/EZDownload">
+          <h4>EZDownload</h4>
+          <p>Save a link, keep the video. Local video downloader for Windows and Android, with a browser extension.</p>
+          <span class="lang"><i style="--c:#b07219"></i>Java</span>
+        </a>
+        <a class="card" href="https://github.com/Ze-Chr0ME/DroidCam">
+          <h4>CameraBridge</h4>
+          <p>Use your Android phone as a Windows webcam over Wi-Fi. Pair with a QR code, pick it in Discord or Zoom.</p>
+          <span class="lang"><i style="--c:#dea584"></i>Rust · Android</span>
+        </a>
+        <a class="card" href="https://github.com/Ze-Chr0ME/cool-n-rbg">
+          <h4>Cool'n RGB</h4>
+          <p>Lightweight SignalRGB / iCUE replacement: RGB lighting and fan/pump control in ~6 MB of RAM.</p>
+          <span class="lang"><i style="--c:#dea584"></i>Rust</span>
+        </a>
+        <a class="card" href="https://github.com/Ze-Chr0ME/everything_backport">
+          <h4>Everything Backport</h4>
+          <p>Every Minecraft update after 1.21.7, playable on 1.21.7. Fabric mod for client and server.</p>
+          <span class="lang"><i style="--c:#b07219"></i>Java · Fabric</span>
+        </a>
+        <a class="card" href="https://ze-chr0me.github.io/phasmophobia-cheat-sheet/">
+          <h4>Phasmophobia Cheat Sheet</h4>
+          <p>Question-based ghost identification with weighted scoring, built for low and no-evidence runs.</p>
+          <span class="lang"><i style="--c:#f1e05a"></i>JavaScript · Web</span>
+        </a>
+      </div>
+      <a class="all" href="https://github.com/Ze-Chr0ME?tab=repositories">All repositories on GitHub →</a>
+    </details>
+  </section>
 </main>
 
-<footer>© Ze-Chr0ME · <a href="https://github.com/Ze-Chr0ME/showcase">Page source</a></footer>
+<footer data-depth="1400" data-zone="Lava Zone">
+  <p><b>Sea floor reached.</b> Oxygen low. <a href="#" class="up">Surface ↑</a></p>
+  <p class="fine">© Ze-Chr0ME · <a href="https://github.com/Ze-Chr0ME/showcase">Page source</a></p>
+</footer>
 
+<script>
+// Bubbles
+const bubbles = document.querySelector('.bubbles');
+for (let i = 0; i < 22; i++) {
+  const b = document.createElement('span');
+  const s = 4 + Math.random() * 14;
+  b.style.cssText = `--x:${Math.random() * 100}%;--s:${s}px;--t:${8 + Math.random() * 12}s;--d:${-Math.random() * 20}s`;
+  bubbles.append(b);
+}
+
+// Depth gauge: interpolates between the data-depth of each zone, measured at the middle of the screen.
+const gauge = document.querySelector('.depth');
+const zones = [...document.querySelectorAll('[data-depth]')];
+function updateDepth() {
+  const y = scrollY + innerHeight / 2;
+  const pts = zones.map(z => ({ y: z.getBoundingClientRect().top + scrollY, d: +z.dataset.depth, n: z.dataset.zone }));
+  let depth = 0, name = pts[0].n;
+  if (scrollY + innerHeight >= document.documentElement.scrollHeight - 4) {
+    depth = pts.at(-1).d; name = pts.at(-1).n;
+  } else {
+    for (let i = 0; i < pts.length; i++) {
+      if (y < pts[i].y) {
+        const a = pts[i - 1] || { y: 0, d: 0 }, b = pts[i];
+        depth = a.d + (b.d - a.d) * Math.max(0, (y - a.y) / (b.y - a.y));
+        break;
+      }
+      depth = pts[i].d; name = pts[i].n;
+    }
+  }
+  gauge.querySelector('b').textContent = Math.round(depth) + ' m';
+  gauge.querySelector('span').textContent = name;
+  gauge.classList.toggle('deep', depth > 500);
+}
+addEventListener('scroll', updateDepth, { passive: true });
+addEventListener('resize', updateDepth);
+updateDepth();
+
+document.querySelector('.up').addEventListener('click', e => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); });
+</script>
 </body>
 </html>
