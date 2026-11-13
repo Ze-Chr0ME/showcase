@@ -321,37 +321,37 @@
 
         <div class="beam">
           <ol class="finds">
-            <li><a href="https://github.com/Ze-Chr0ME/Filink">
+            <li><a href="filink/">
               <span class="no">№ 1</span>
               <h3>Filink</h3>
               <p>Fast file, folder and text transfer between an Android phone and a Windows PC on the same Wi-Fi.</p>
               <span class="made">Rust, Kotlin</span>
             </a></li>
-            <li><a href="https://github.com/Ze-Chr0ME/EZDownload">
+            <li><a href="ezdownload/">
               <span class="no">№ 2</span>
               <h3>EZDownload</h3>
               <p>Save a link. Keep the video. A local video downloader for Windows and Android, with a browser extension.</p>
               <span class="made">Java</span>
             </a></li>
-            <li><a href="https://github.com/Ze-Chr0ME/DroidCam">
+            <li><a href="camerabridge/">
               <span class="no">№ 3</span>
               <h3>CameraBridge</h3>
               <p>Your Android phone as a Windows webcam over Wi-Fi. Pair it by scanning a QR code.</p>
               <span class="made">Rust, Android</span>
             </a></li>
-            <li><a href="https://github.com/Ze-Chr0ME/cool-n-rbg">
+            <li><a href="cool-n-rgb/">
               <span class="no">№ 4</span>
               <h3>Cool'n RGB</h3>
               <p>A lightweight SignalRGB and iCUE replacement: RGB lighting plus fan and pump control in about 6 MB of RAM.</p>
               <span class="made">Rust</span>
             </a></li>
-            <li><a href="https://github.com/Ze-Chr0ME/everything_backport">
+            <li><a href="everything-backport/">
               <span class="no">№ 5</span>
               <h3>Everything Backport</h3>
               <p>Every Minecraft update after 1.21.7, playable on 1.21.7. A Fabric mod.</p>
               <span class="made">Java</span>
             </a></li>
-            <li><a href="https://github.com/Ze-Chr0ME/fabric_skills_mod">
+            <li><a href="fabric-skills-mod/">
               <span class="no">№ 6</span>
               <h3>Fabric Skills Mod</h3>
               <p>Server-side skills for Minecraft on Fabric, built for Geyser players without requiring Hydraulics.</p>
@@ -393,47 +393,6 @@
   </footer>
 </div>
 
-<script>
-// Depth gauge: rides the sounding line and reads the depth at the middle of the screen,
-// interpolated between the data-depth of each zone.
-(function () {
-  var zones = [].slice.call(document.querySelectorAll('[data-depth]'));
-  var gauge = document.createElement('div');
-  gauge.className = 'gauge';
-  gauge.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(gauge);
-  var queued = false;
-  function read() {
-    queued = false;
-    var y = scrollY + innerHeight / 2, depth = 0;
-    var pts = zones.map(function (z) { return { y: z.getBoundingClientRect().top + scrollY, d: +z.dataset.depth }; });
-    if (scrollY + innerHeight >= document.documentElement.scrollHeight - 4) {
-      depth = pts[pts.length - 1].d;
-    } else {
-      for (var i = 0; i < pts.length; i++) {
-        if (y < pts[i].y) {
-          var a = pts[i - 1] || { y: 0, d: 0 }, b = pts[i];
-          depth = a.d + (b.d - a.d) * Math.max(0, (y - a.y) / (b.y - a.y));
-          break;
-        }
-        depth = pts[i].d;
-      }
-    }
-    gauge.textContent = Math.round(depth) + ' m';
-  }
-  function queue() { if (!queued) { queued = true; requestAnimationFrame(read); } }
-  addEventListener('scroll', queue, { passive: true });
-  addEventListener('resize', queue);
-  var lamp = document.querySelector('.lamp');
-  if (lamp) lamp.addEventListener('toggle', queue);
-  read();
-
-  document.querySelector('.up').addEventListener('click', function (e) {
-    e.preventDefault();
-    var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    scrollTo({ top: 0, behavior: calm ? 'auto' : 'smooth' });
-  });
-})();
-</script>
+<script src="chart.js"></script>
 </body>
 </html>

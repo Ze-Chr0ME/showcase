@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CameraBridge | The Chr0ME Deep</title>
+<meta name="description" content="Your Android phone as a Windows webcam over Wi-Fi. Pair it by scanning a QR code.">
+<meta property="og:title" content="CameraBridge | The Chr0ME Deep">
+<meta property="og:description" content="Your Android phone as a Windows webcam over Wi-Fi. Pair it by scanning a QR code.">
+<meta property="og:image" content="https://ze-chr0me.github.io/showcase/assets/og-chart.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ze-chr0me.github.io/showcase/camerabridge/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1763cf">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%231763cf'/><path d='M16 32C24 20 42 18 54 32 42 46 24 44 16 32Z' fill='%23ffc83d'/><path d='M18 32 6 21 10 32 6 43Z' fill='%23ffc83d'/><circle cx='43' cy='29' r='3' fill='%2307173f'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Karla:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+
+<link rel="canonical" href="https://ze-chr0me.github.io/showcase/camerabridge/">
+</head>
+<body class="project-page" id="top">
+<a class="skip" href="#field-notes">Skip to the project</a>
+<!-- Shared shapes. Every drawing on this page is original and written by hand as SVG. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="fish" viewBox="0 0 70 36">
+    <path d="M12 18C24 3 48 1 68 18 48 35 24 33 12 18Z"/>
+    <path d="M15 18 0 4 5 18 0 32Z"/>
+  </symbol>
+  <symbol id="kelp" viewBox="0 0 120 520"><path d="M51.8 520L54.4 510L57.2 500L60 490L62.9 480L65.7 470L68.2 460L70.5 450L72.3 440L73.7 430L74.6 420L75 410L74.8 400L74.1 390L72.8 380L71.1 370L69 360L66.5 350L63.8 340L60.9 330L58.1 320L55.3 310L52.6 300L50.3 290L48.3 280L46.7 270L45.6 260L45.1 250L45.1 240L45.6 230L46.7 220L48.3 210L50.3 200L52.6 190L55.3 180L58.1 170L61 160L63.8 150L66.5 140L69 130L71.1 120L72.8 110L74.1 100L74.8 90L75 80L74.6 70L73.7 60L72.3 50L70.4 40L68.2 30L65.6 20L62.9 10" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><g fill="currentColor"><path transform="translate(61.2 486) rotate(-28) scale(0.98)" d="M0 0C14-15 40-13 56-2 40 11 14 12 0 0Z"/><path transform="translate(72.0 442) rotate(208) scale(0.96)" d="M0 0C14-15 40-13 56-2 40 11 14 12 0 0Z"/><path transform="translate(74.7 398) rotate(-28) scale(0.93)" d="M0 0C14-15 40-13 56-2 40 11 14 12 0 0Z"/><path transform="translate(67.5 354) rotate(208) scale(0.91)" d="M0 0C14-15 40-13 56-2 40 11 14 12 0 0Z"/><path transform="translate(55.3 310) rotate(-28) scale(0.89)" d="M0 0C14-15 40-13 56-2 40 11 14 12 0 0Z"/><path transform="translate(46.2 266) rotate(208) scale(0.86)" d="M0 0C14-15 40-13 56-2 40 11 14 12 0 0Z"/><path transform="translate(46.4 222) rotate(-28) scale(0.84)" d="M0 0C14-15 40-13 56-2 40 11 14 12 0 0Z"/><path transform="translate(55.8 178) rotate(208) scale(0.82)" d="M0 0C14-15 40-13 56-2 40 11 14 12 0 0Z"/><path transform="translate(68.0 134) rotate(-28) scale(0.79)" d="M0 0C14-15 40-13 56-2 40 11 14 12 0 0Z"/><path transform="translate(74.8 90) rotate(208) scale(0.77)" d="M0 0C14-15 40-13 56-2 40 11 14 12 0 0Z"/><path transform="translate(71.6 46) rotate(-28) scale(0.74)" d="M0 0C14-15 40-13 56-2 40 11 14 12 0 0Z"/><path transform="translate(62.9 10) rotate(-84) scale(.8)" d="M0 0C14-15 40-13 56-2 40 11 14 12 0 0Z"/></g></symbol>
+  <symbol id="coral" viewBox="0 0 160 220">
+    <path d="M80 220V120M80 170 38 118M38 118V62M38 118 12 92M80 146l44-48M124 98V44M124 98l26-20M80 120 66 70M124 60l-18-22" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="edge-a" viewBox="0 0 1440 70" preserveAspectRatio="none">
+    <path d="M0 42C120 12 260 64 420 38S700 10 860 36s260 30 400-4 120-8 180 8V70H0Z"/>
+    <path d="M0 42C120 12 260 64 420 38S700 10 860 36s260 30 400-4 120-8 180 8" fill="none" stroke="#f4ecd8" stroke-opacity=".38" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+  </symbol>
+  <symbol id="edge-b" viewBox="0 0 1440 70" preserveAspectRatio="none">
+    <path d="M0 30c90 22 200 30 330 6S560 8 700 30s230 34 380 10 250-26 360-2V70H0Z"/>
+    <path d="M0 30c90 22 200 30 330 6S560 8 700 30s230 34 380 10 250-26 360-2" fill="none" stroke="#f4ecd8" stroke-opacity=".38" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+  </symbol>
+</svg>
+
+
+<div class="chart">
+  <div class="ruler" aria-hidden="true"></div>
+  <header class="sky">
+    <div class="wrap sky-row">
+      <p class="chart-no"><b>Find No. 3</b> <span>The Chr0ME Deep, field notes</span></p>
+      <a class="wavy" href="../">Back to the chart</a>
+    </div>
+
+    <svg class="rose" viewBox="-70 -70 140 140" aria-hidden="true">
+      <g fill="none" stroke="#07173f" stroke-width="1.4">
+        <circle r="58"/><circle r="50" stroke-dasharray="2 5.85"/><circle r="22"/>
+      </g>
+      <g id="pt-s" stroke="#07173f" stroke-width="1.2" stroke-linejoin="round">
+        <g transform="rotate(45)"><path d="M0-36 5-5 0 0Z" fill="#07173f"/><path d="M0-36-5-5 0 0Z" fill="#f4ecd8"/></g>
+        <g transform="rotate(135)"><path d="M0-36 5-5 0 0Z" fill="#07173f"/><path d="M0-36-5-5 0 0Z" fill="#f4ecd8"/></g>
+        <g transform="rotate(225)"><path d="M0-36 5-5 0 0Z" fill="#07173f"/><path d="M0-36-5-5 0 0Z" fill="#f4ecd8"/></g>
+        <g transform="rotate(315)"><path d="M0-36 5-5 0 0Z" fill="#07173f"/><path d="M0-36-5-5 0 0Z" fill="#f4ecd8"/></g>
+        <g><path d="M0-56 8-8 0 0Z" fill="#ff6040"/><path d="M0-56-8-8 0 0Z" fill="#f4ecd8"/></g>
+        <g transform="rotate(90)"><path d="M0-56 8-8 0 0Z" fill="#07173f"/><path d="M0-56-8-8 0 0Z" fill="#f4ecd8"/></g>
+        <g transform="rotate(180)"><path d="M0-56 8-8 0 0Z" fill="#07173f"/><path d="M0-56-8-8 0 0Z" fill="#f4ecd8"/></g>
+        <g transform="rotate(270)"><path d="M0-56 8-8 0 0Z" fill="#07173f"/><path d="M0-56-8-8 0 0Z" fill="#f4ecd8"/></g>
+      </g>
+    </svg>
+
+    <div class="swell" aria-hidden="true">
+      <i class="row r1"></i>
+      <svg class="buoy" viewBox="0 0 60 104">
+        <g stroke="#07173f" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M30 44V6"/>
+          <path d="M30 7 52 14 30 22Z" fill="#ff6040"/>
+          <path d="M14 46h32l8 40H6Z" fill="#f4ecd8"/>
+          <path d="M11.5 60h37l3.3 14H8.700Z" fill="#ff6040"/>
+          <path d="M3 86h54v10H3Z" fill="#07173f"/>
+        </g>
+      </svg>
+      <i class="row r2"></i>
+      <i class="row r3"></i>
+    </div>
+  </header>
+  <main>
+    <section class="zone z0 project-surface" data-depth="0" aria-labelledby="project-title">
+      <div class="decor" aria-hidden="true">
+        <svg class="swim s1"><use href="#fish"/></svg>
+        <svg class="swim s2"><use href="#fish"/></svg>
+      </div>
+      <div class="wrap">
+        <p class="project-eyebrow">Lost River collection / Find No. 3</p>
+        <h1 id="project-title">CameraBridge</h1>
+        <p class="lede project-description">Your Android phone as a Windows webcam over Wi-Fi. Pair it by scanning a QR code.</p>
+        <p class="actions">
+          <span class="hoist"><a class="flag" href="https://github.com/Ze-Chr0ME/DroidCam">View on GitHub</a></span>
+          <a class="wavy" href="#field-notes">Read the field notes</a>
+        </p>
+      </div>
+    </section>
+    <section class="zone z2" id="field-notes" data-depth="900" aria-labelledby="notes-title">
+      <svg class="edge" aria-hidden="true"><use href="#edge-a"/></svg>
+      <div class="decor" aria-hidden="true"><svg class="coral c1"><use href="#coral"/></svg></div>
+      <div class="wrap">
+        <p class="mark"><b>900 m</b> <i>Lost River</i></p>
+        <div class="party project-notes">
+          <div class="party-text">
+            <h2 id="notes-title">Field notes</h2>
+            <p class="lede">A new job for your phone.</p>
+            <p>Use your Android phone as a webcam on Windows. Scan a QR code to pair the devices over Wi-Fi.</p>
+            <p class="project-source">Explore the repository for project documentation, setup instructions and source code.</p>
+            <p class="actions"><a class="wavy" href="https://github.com/Ze-Chr0ME/DroidCam">Read the source</a></p>
+          </div>
+          <aside class="plate specimen" aria-label="Project at a glance">
+            <p class="plate-head"><i>Find No. 3.</i> CameraBridge</p>
+            <svg class="specimen-fish" viewBox="0 0 200 110" aria-hidden="true">
+              <g transform="translate(26 28) scale(2)"><use href="#fish" width="70" height="36" fill="var(--sun)" stroke="var(--ink)" stroke-width="1.5"/><circle cx="55" cy="15" r="2.5" fill="var(--ink)"/></g>
+            </svg>
+            <dl class="notes">
+              <dt>Habitat</dt><dd>Windows PC + Android</dd>
+              <dt>Behaviour</dt><dd>Webcam over Wi-Fi</dd>
+              <dt>Noted for</dt><dd>QR-code pairing</dd>
+              <dt>Built from</dt><dd>Rust, Android</dd>
+            </dl>
+            <p class="plate-foot">Surveyed in the Chr0ME Deep</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section class="zone z3 project-related" data-depth="1100" aria-labelledby="related-title">
+      <svg class="edge" aria-hidden="true"><use href="#edge-b"/></svg>
+      <div class="wrap">
+        <p class="mark"><b>1100 m</b> <i>Nearby finds</i></p>
+        <h2 id="related-title">Keep exploring</h2>
+        <ol class="finds"><li><a href="../filink/"><span class="no">&#8470; 1</span><h3>Filink</h3><p>Fast file, folder and text transfer between an Android phone and a Windows PC on the same Wi-Fi.</p><span class="made">Rust, Kotlin</span></a></li><li><a href="../ezdownload/"><span class="no">&#8470; 2</span><h3>EZDownload</h3><p>Save a link. Keep the video. A local video downloader for Windows and Android, with a browser extension.</p><span class="made">Java</span></a></li><li><a href="../cool-n-rgb/"><span class="no">&#8470; 4</span><h3>Cool&#x27;n RGB</h3><p>A lightweight SignalRGB and iCUE replacement: RGB lighting plus fan and pump control in about 6 MB of RAM.</p><span class="made">Rust</span></a></li><li><a href="../everything-backport/"><span class="no">&#8470; 5</span><h3>Everything Backport</h3><p>Every Minecraft update after 1.21.7, playable on 1.21.7. A Fabric mod.</p><span class="made">Java</span></a></li><li><a href="../fabric-skills-mod/"><span class="no">&#8470; 6</span><h3>Fabric Skills Mod</h3><p>Server-side skills for Minecraft on Fabric, built for Geyser players without requiring Hydraulics.</p><span class="made">Java</span></a></li></ol>
+        <p class="all"><a class="wavy" href="../#deep">Return to the main chart</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="zone z4" data-depth="1400">
+    <svg class="edge" aria-hidden="true"><use href="#edge-b"/></svg>
+    <div class="wrap">
+      <p class="mark"><b>1400 m</b> <i>Sea floor</i></p>
+      <p class="floor-line">Another find, charted.</p>
+      <p class="floor-links">
+        <a class="wavy" href="../#deep">Back to all projects</a>
+        <a class="wavy" href="https://github.com/Ze-Chr0ME/showcase">Page source</a>
+        <a class="wavy" href="https://github.com/Ze-Chr0ME">GitHub profile</a>
+      </p>
+      <p class="fine">© Ze-Chr0ME. Drawn in SVG, no fish were harmed.</p>
+    </div>
+    <svg class="pod" viewBox="0 0 150 120" aria-hidden="true">
+      <g stroke-linejoin="round" stroke-linecap="round">
+        <path d="M76 22V2M76 3l16 5-16 6" fill="none" stroke="#0e3a94" stroke-width="3"/>
+        <path d="M26 92C14 54 40 20 76 20s62 34 50 72Z" fill="#0e3a94"/>
+        <path d="M12 90h128v14H12Z" fill="#0a2f7e"/>
+        <circle cx="76" cy="58" r="17" fill="#ffc83d"/>
+        <circle cx="76" cy="58" r="17" fill="none" stroke="#07173f" stroke-width="4"/>
+        <path d="M40 78h72" fill="none" stroke="#07286e" stroke-width="3"/>
+      </g>
+    </svg>
+    <svg class="seabed" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 120V62c110-30 210 26 370 12S640 8 800 40s240 46 400 14 180-30 240-8v74Z"/>
+    </svg>
+  </footer>
+</div>
+<script src="../chart.js"></script>
+</body>
+</html>

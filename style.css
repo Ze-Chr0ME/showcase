@@ -468,6 +468,30 @@ h2 {
 .seabed { position: absolute; left: 0; bottom: 0; width: 100%; height: 120px; fill: #020720; z-index: 2; }
 .pod { position: absolute; z-index: 2; right: 12%; bottom: 62px; width: 150px; transform: rotate(-9deg); }
 
+/* ---------- Individual finds: the same chart, a closer look ---------- */
+.project-eyebrow {
+  margin-bottom: 26px;
+  color: var(--sun);
+  font: italic 400 1.25rem/1.4 var(--display);
+}
+.project-page h1 {
+  max-width: 13ch;
+  font-size: clamp(2.75rem, 9vw, 7.5rem);
+  line-height: .98;
+  overflow-wrap: anywhere;
+}
+.project-description { margin-top: 34px; max-width: 29em; }
+.project-notes h2 { font-size: clamp(3rem, 6vw, 5.5rem); }
+.project-source { margin-top: 24px; max-width: 30em; }
+.specimen { min-width: 0; }
+.specimen-fish { width: 240px; margin: 16px auto; }
+.specimen .notes { margin: 0 8px 24px; border-color: var(--ink); }
+.specimen .notes dt, .specimen .notes dd { border-color: var(--ink); }
+.specimen .notes dd { overflow-wrap: anywhere; }
+.specimen .notes dt { padding-right: 16px; }
+.project-related h2 { margin-top: 44px; font-size: clamp(3rem, 7vw, 6rem); }
+.project-related .finds { margin-top: 48px; }
+
 /* ---------- Motion (only if welcome) ---------- */
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
