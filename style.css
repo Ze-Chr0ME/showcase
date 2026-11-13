@@ -113,8 +113,8 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
   z-index: 5;
   transform: translateY(-50%);
   padding: 5px 9px 5px 20px;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--sun);
+  color: var(--ink);
   font: 700 .8125rem/1.2 var(--text);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -484,11 +484,37 @@ h2 {
 .project-notes h2 { font-size: clamp(3rem, 6vw, 5.5rem); }
 .project-source { margin-top: 24px; max-width: 30em; }
 .specimen { min-width: 0; }
-.specimen-fish { width: 240px; margin: 16px auto; }
-.specimen .notes { margin: 0 8px 24px; border-color: var(--ink); }
-.specimen .notes dt, .specimen .notes dd { border-color: var(--ink); }
-.specimen .notes dd { overflow-wrap: anywhere; }
+.project-logo {
+  width: 128px; height: 128px;
+  object-fit: contain;
+  margin: 32px auto;
+  border-radius: 18px;
+  box-shadow: 0 0 0 2px var(--ink), 5px 6px 0 rgba(7, 23, 63, .15);
+}
+.project-wordmark {
+  margin: 32px auto;
+  padding: 10px 0;
+  text-align: center;
+  font: 900 clamp(1.75rem, 4vw, 2.5rem)/1 var(--display);
+  letter-spacing: -.035em;
+}
+.project-wordmark span { font-style: italic; }
+.specimen .notes {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  margin: 0 8px 24px;
+  border-color: var(--ink);
+}
+.specimen .notes dt, .specimen .notes dd {
+  padding-top: 14px; padding-bottom: 14px;
+  border-color: rgba(7, 23, 63, .35);
+}
+.specimen .notes dd { overflow-wrap: anywhere; font-size: 1rem; line-height: 1.5; }
 .specimen .notes dt { padding-right: 16px; }
+@media (max-width: 480px) {
+  .specimen .notes { grid-template-columns: 1fr; }
+  .specimen .notes dt { border-bottom: 0; padding-bottom: 0; padding-right: 0; }
+  .specimen .notes dd { padding-top: 4px; }
+}
 .project-related h2 { margin-top: 44px; font-size: clamp(3rem, 7vw, 6rem); }
 .project-related .finds { margin-top: 48px; }
 
