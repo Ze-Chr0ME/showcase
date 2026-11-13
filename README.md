@@ -56,6 +56,17 @@ You can also serve the folder with any static file server. Internet access loads
 
 **Update a project:** edit its entry in `index.html`. The featured sections use `#party` and `#demolab`; the smaller projects are listed inside `#deep`.
 
+Each smaller project also has its own static page, styled with the shared `style.css`:
+
+- `filink/`
+- `ezdownload/`
+- `camerabridge/`
+- `cool-n-rgb/`
+- `everything-backport/`
+- `fabric-skills-mod/`
+
+Edit the corresponding folder's `index.html` to update its field notes. Keep its summary in sync with the main chart. Each page links to its GitHub repository, the other finds and the main chart. Folder URLs work under the GitHub Pages `/showcase/` base path as well as at a domain root, with no build or client-side router. The shared `chart.js` drives the depth gauge on all pages.
+
 **Refresh screenshots:** replace `assets/demolab-overview.jpg`, `assets/demolab-replay.jpg` and `assets/demolab-clips.jpg`. Keep image dimensions, alt text and captions in sync with the new images.
 
 **Adjust the theme:** start with the CSS custom properties in `:root` in `style.css`. Section depths are declared with `data-depth` in the HTML and read by the gauge script.
