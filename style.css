@@ -485,9 +485,11 @@ h2 {
 .project-source { margin-top: 24px; max-width: 30em; }
 .specimen { min-width: 0; }
 .project-logo {
+  display: block;
   width: 128px; height: 128px;
   object-fit: contain;
-  margin: 32px auto;
+  margin-block: 32px;
+  margin-inline: auto;
   border-radius: 18px;
   box-shadow: 0 0 0 2px var(--ink), 5px 6px 0 rgba(7, 23, 63, .15);
 }
