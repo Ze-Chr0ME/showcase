@@ -520,8 +520,106 @@ h2 {
 .project-related h2 { margin-top: 44px; font-size: clamp(3rem, 7vw, 6rem); }
 .project-related .finds { margin-top: 48px; }
 
+/* ---------- Life in the margins (placed by sea.js) ----------
+   Shoals and bubbles in the shallows, jellyfish further down, eyes in the dark.
+   It all stays in the empty water either side of the sheet, under the paper grain. */
+.sea {
+  --g: max((100vw - 1240px) / 2, 0px);
+  position: absolute; inset: 0; z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+.sea-l, .sea-r { position: absolute; top: 0; bottom: 0; width: var(--gw); overflow: hidden; }
+.sea-l { left: 0; --gw: calc(var(--g) + 36px); }
+.sea-r { right: 0; --gw: var(--g); transform: scaleX(-1); }
+.sea svg { max-width: none; overflow: visible; }
+
+/* --p is how far the zone sits from mid-screen, --v the scroll speed, --a its size. */
+.dr {
+  position: absolute;
+  left: calc((var(--gw) - var(--w)) * var(--x));
+  width: var(--w);
+  translate: 0 calc(var(--p, 0) * var(--d) * 1px);
+}
+.sc { translate: calc(var(--a, 0) * var(--kx) * 1px) calc(var(--v, 0) * var(--ky) * 1px); }
+
+.shoal, .ang { left: 0; }
+.shoal { --w: 124px; height: 84px; }
+.z1 .shoal { opacity: .85; }
+.z2 .shoal { opacity: .6; }
+.f { position: absolute; fill: var(--c); }
+
+.bub i {
+  position: absolute; bottom: 0;
+  width: var(--s); height: var(--s);
+  border: 2px solid var(--paper); border-radius: 50%;
+  opacity: .6;
+  transform: translateY(calc(var(--h) * var(--i) * -1));
+}
+
+.jelly svg, .eyes svg { width: 100%; }
+.trail { fill: none; stroke: var(--c); stroke-width: 2.4; stroke-linecap: round; }
+.dome { fill: var(--c); }
+.rib { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; opacity: .6; }
+.spark { display: none; fill: var(--sun); }
+.lumi .dome { fill-opacity: .16; stroke: var(--c); stroke-width: 2; }
+.lumi .rib { display: none; }
+.lumi .spark { display: inline; }
+.bell, .trail { transform-box: fill-box; transform-origin: 50% 0; }
+
+.eyes svg { fill: var(--c); }
+.pupil { fill: var(--z4); translate: 0 clamp(-2px, calc(var(--v, 0) * .12px), 2px); }
+.lid, .wink { transform-box: fill-box; transform-origin: 50% 50%; }
+
+/* Less margin, less life: thin the shoals, then keep only bubbles and eyes left of the line. */
+@media (max-width: 1699px) {
+  .sea .x { display: none; }
+  .shoal { --w: 84px; }
+}
+@media (max-width: 1399px) {
+  .sea-r, .sea-l > :not(.t) { display: none; }
+  .eyes { --w: 26px !important; }
+}
+@media (max-width: 760px) {
+  .sea { display: none; }
+}
+
 /* ---------- Motion (only if welcome) ---------- */
 @media (prefers-reduced-motion: no-preference) {
+  .shoal, .ang { animation: patrol var(--t) linear infinite; }
+  .f { animation: fin 2s ease-in-out infinite alternate; }
+  .bub i { animation: rise var(--t) linear infinite; }
+  .jelly { animation: waft var(--t) ease-in-out infinite alternate; }
+  .bell { animation: pulse var(--b) ease-in-out infinite alternate; }
+  .trail { animation: trail var(--b) ease-in-out infinite alternate; }
+  .wink { animation: wink var(--t) infinite; }
+  .lure { animation: lure 1.9s ease-in-out infinite alternate; }
+  /* Eyes open as they pass mid-screen, and narrow while the water rushes by. */
+  .live .lid { transform: scaleY(0); transition: transform .2s ease-out calc(var(--x) * .3s); }
+  .live .open .lid { transform: none; }
+  .live.fast .open .lid { transform: scaleY(.4); }
+  .sea:not(.on) * { animation-play-state: paused; }
+  @keyframes patrol {
+    0%   { transform: translateX(calc(-1 * var(--w) - 12px)) scaleX(1); }
+    47%  { transform: translateX(calc((var(--gw) - var(--w) - 14px) * var(--r))) scaleX(1); }
+    50%  { transform: translateX(calc((var(--gw) - var(--w) - 14px) * var(--r))) scaleX(-1); }
+    97%  { transform: translateX(calc(-1 * var(--w) - 12px)) scaleX(-1); }
+    100% { transform: translateX(calc(-1 * var(--w) - 12px)) scaleX(1); }
+  }
+  @keyframes fin   { from { transform: translateY(-2px) rotate(-4deg); } to { transform: translateY(2px) rotate(4deg); } }
+  @keyframes rise {
+    0%   { transform: translate(0, 0) scale(.5); opacity: 0; }
+    12%  { opacity: .75; }
+    50%  { transform: translate(var(--wb), calc(var(--h) * -.5)) scale(.9); }
+    80%  { opacity: .6; }
+    100% { transform: translate(calc(var(--wb) * -.5), calc(var(--h) * -1)) scale(1.1); opacity: 0; }
+  }
+  @keyframes waft  { from { transform: translate(0, 0) rotate(-5deg); } to { transform: translate(var(--dx), var(--dy)) rotate(6deg); } }
+  @keyframes pulse { from { transform: scale(1.05, .93); } to { transform: scale(.84, 1.1); } }
+  @keyframes trail { from { transform: scaleY(1.04); } to { transform: scaleY(.8); } }
+  @keyframes wink  { 0%, 93%, 100% { transform: scaleY(1); } 96.5% { transform: scaleY(.06); } }
+  @keyframes lure  { from { opacity: 1; } to { opacity: .35; } }
+
   html { scroll-behavior: smooth; }
   .r1 { animation: roll 14s linear infinite; }
   .r2 { animation: roll 9s linear infinite reverse; }
